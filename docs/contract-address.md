@@ -1,2 +1,3 @@
 Polygon Amoy MembershipPass contract:
 0x2b6677E4D351d85D021Ee02B708BF81d994d86b
+https://www.oklink.com/amoy/tx/0x009eed35c7de33fd99b6393eea3d5daffd5c6eedc36b5c4d284c1b0782b0dccb
