@@ -1,6 +1,14 @@
-Polygon Amoy MembershipPass contract:
+# Contract Addresses - FlowPass Membership NFT
+
+## Polygon Amoy (Testnet)
+- **Contract Address:**
 0x2b6677E4D351d85D021Ee02B708BF81d994d86b
 
-https://www.oklink.com/amoy/tx/0x009eed35c7de33fd99b6393eea3d5daffd5c6eedc36b5c4d284c1b0782b0dccb
+- **Block Explorer (OKLink):**
+https://www.oklink.com/amoy/address/0x2b6677e4d351d85d21e12e00708bf81d994d86db
 
+- **Verified Source (Sourcify):**
 https://repo.sourcify.dev/80002/0x2b6677E4D351d85D21e12e00708bF81d994d86Db
+
+
+
