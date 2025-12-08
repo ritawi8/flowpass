@@ -1,0 +1,2 @@
+Polygon Amoy MembershipPass contract:
+0x2b6677E4D351d85D021Ee02B708BF81d994d86b
