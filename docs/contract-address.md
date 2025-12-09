@@ -2,13 +2,10 @@
 
 ## Polygon Amoy (Testnet)
 - **Contract Address:**
-0x2b6677E4D351d85D021Ee02B708BF81d994d86b
+0xEAD97D1344290A5e38c36b71365E446Ef98191B6
 
 - **Block Explorer (OKLink):**
-https://www.oklink.com/amoy/address/0x2b6677e4d351d85d21e12e00708bf81d994d86db
+https://www.oklink.com/amoy/address/0xEAD97D1344290A5e38c36b71365E446Ef98191B6
 
 - **Verified Source (Sourcify):**
-https://repo.sourcify.dev/80002/0x2b6677E4D351d85D21e12e00708bF81d994d86Db
-
-
-
+https://repo.sourcify.dev/80002/0xEAD97D1344290A5e38c36b71365E446Ef98191B6
