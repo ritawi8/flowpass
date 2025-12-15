@@ -1,6 +1,6 @@
-export const FLOWPASS_ADDRESS = "0xEAD97D1344290A5e38c36b71365E446Ef98191B6";
+export const FLOWPASS_ADDRESS = "0xEAD97D1344290A5e38c36b71365E446Ef98191B6" as const;
 
-export const FLOWPASS_ABI =[
+export const FLOWPASS_ABI = [
 	{
 		"inputs": [
 			{
@@ -545,4 +545,4 @@ export const FLOWPASS_ABI =[
 		"stateMutability": "view",
 		"type": "function"
 	}
-]
+] as const;

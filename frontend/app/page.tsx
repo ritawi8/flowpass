@@ -1,6 +1,8 @@
 "use client";
 
+import MintButton from "./components/MintButton";
 import ConnectWalletButton from "./components/ConnectWalletButton";
+import MemberStatus from "./components/MemberStatus";
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
         Welcome to Wellness Studio
       </h1>
       <ConnectWalletButton/>
+      <MemberStatus/>
+      <MintButton/>
       <p className="text-lg">
         FlowPass is your NFT membership pass for modern wellness spaces 
         <br />- simple, secure and made for real people, not crypto nerd.

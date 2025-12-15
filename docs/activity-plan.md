@@ -34,7 +34,7 @@ Connect the frontend to the blockchain so users can connect their wallet and che
 - Integrate Ethers.js with ABI + contract address (5 SP)  
   - Import ABI + address into frontend  
   - Create a contract instance using the MetaMask provider  
-- Build Customer Verification section/page (5 SP)  
+- Build Customer Verification section (5 SP)  
   - Call `isMember(address)` from the frontend  
   - Show clear result in the UI (e.g. “You are a member” / “You are not a member”)  
 
