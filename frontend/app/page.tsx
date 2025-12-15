@@ -52,6 +52,7 @@ export default function Home() {
             <li>✔ Built on blockchain, but with a calm, human experience.</li>
         </ul>
       </section>
+      
     </div>
   </main>
   );

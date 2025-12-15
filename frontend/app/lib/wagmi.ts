@@ -1,9 +1,11 @@
-import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { createConfig, http } from "wagmi";
 import { polygonAmoy } from "wagmi/chains";
+import { injected } from "wagmi/connectors";
 
-export const config = getDefaultConfig({
-    appName: "FlowPass",
-    projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID as string,
-    chains: [polygonAmoy],
-    ssr: false,
-})
+export const config = createConfig({
+  chains: [polygonAmoy],
+  connectors: [injected()],
+  transports: {
+    [polygonAmoy.id]: http(),
+  },
+});
