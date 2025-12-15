@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
+import Providers from "./providers";
 
 const headingFont = Playfair_Display({
   subsets: ["latin"],
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${headingFont.variable} ${bodyFont.variable} min-h-screen`}
       >
-        {children}
+       <Providers> {children}</Providers>
       </body>
     </html>
   );
