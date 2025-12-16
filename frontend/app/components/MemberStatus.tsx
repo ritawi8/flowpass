@@ -58,11 +58,11 @@ export default function MemberStatus() {
   }
 
   if (!isConnected) {
-    return <p className="text-sm ">Connect wallet to verify membership.</p>;
+    return <p className="text-sm text-zinc-200">Connect wallet to verify membership.</p>;
   }
 
   if (loading) {
-    return <p className="text-sm ">Checking membership…</p>;
+    return <p className="text-sm text-zinc-200">Checking membership…</p>;
   }
 
   if (error) {
@@ -76,8 +76,8 @@ export default function MemberStatus() {
   if (isMember === null) return null;
 
   return isMember ? (
-    <p className="text-sm ">✅ Membership verified</p>
+    <p className="text-sm text-emerald-200">✅ Membership verified</p>
   ) : (
-    <p className="text-sm ">❌ No membership NFT found</p>
+    <p className="text-sm text-yellow-200">❌ No membership NFT found</p>
   );
 }

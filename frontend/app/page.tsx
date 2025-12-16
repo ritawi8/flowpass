@@ -4,8 +4,12 @@ import MintButton from "./components/MintButton";
 import ConnectWalletButton from "./components/ConnectWalletButton";
 import MemberStatus from "./components/MemberStatus";
 import OwnerPanel from "./components/OwnerPanel";
+import { useAccount } from "wagmi";
 
 export default function Home() {
+
+const { address} =useAccount();
+
   return (
     <main className="flex flex-col">
       {/* HERO SECTION MED BAKGRUNDSBILD */}
@@ -83,7 +87,7 @@ export default function Home() {
           backgroundRepeat: "no-repeat"
         }}
       >
-      <OwnerPanel/>
+      <OwnerPanel connectedAddress={address}/>
       </section>
     </main>
   );

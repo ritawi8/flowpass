@@ -39,7 +39,7 @@ Connect the frontend to the blockchain so users can connect their wallet and che
   - Show clear result in the UI (e.g. “You are a member” / “You are not a member”)  ✅
 
 **Outcome:**  
-A user can connect their wallet in the frontend and see whether they are a member according to the deployed smart contract.
+A user can connect their wallet in the frontend and see whether they are a member according to the deployed smart contract.✅
 
 ---
 
@@ -49,10 +49,10 @@ A user can connect their wallet in the frontend and see whether they are a membe
 Allow the contract owner to mint membership NFTs to customers directly from the frontend.
 
 **Tasks:**
-- Create a simple admin section/page for the owner  
-- Add a form to input a recipient address  
+- ✅Create a simple admin section/page for the owner  
+- ✅Add a form to input a recipient address  
 - Connect the form to the `mint(address)` function in the contract  
-- Show basic feedback in the UI (loading, success, error)  
+- ✅Show basic feedback in the UI (loading, success, error)  
 
 **Outcome:**  
 The owner can mint new membership NFTs to any wallet address through the frontend, using the deployed contract on Polygon Amoy.
