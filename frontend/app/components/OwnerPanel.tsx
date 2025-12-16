@@ -27,14 +27,14 @@ const [ status, setStatus ] = useState("Enter a wallet address and click Mint");
     const handleMint =async () =>{
             if (!recipient || !recipient.startsWith("0x") || recipient.length !== 42){
                 setStatus("Please enter a valid wallet address");
-                setRecipient("");
+               
                 return;
             }
 
             try{
                 setStatus("Minting membership…")
                 const to = recipient as `0x${string}`;
-                setRecipient("");
+                
 
                 await mintTo(to); // Contract call
 
