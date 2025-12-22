@@ -34,12 +34,13 @@ Connect the frontend to the blockchain so users can connect their wallet and che
 - Integrate Ethers.js with ABI + contract address (5 SP)  
   - Import ABI + address into frontend  
   - Create a contract instance using the MetaMask provider  
-- Build Customer Verification section (5 SP)  ✅
-  - Call `isMember(address)` from the frontend  ✅
-  - Show clear result in the UI (e.g. “You are a member” / “You are not a member”)  ✅
+- Build Customer Verification section (5 SP)  
+  - Call `isMember(address)` from the frontend  
+  - Show clear result in the UI (e.g. “You are a member” / “You are not a member”)  
+  - Manual verification (reception flow): input address + check
 
 **Outcome:**  
-A user can connect their wallet in the frontend and see whether they are a member according to the deployed smart contract.✅
+A user can connect their wallet in the frontend and see whether they are a member according to the deployed smart contract.
 
 ---
 
@@ -49,13 +50,13 @@ A user can connect their wallet in the frontend and see whether they are a membe
 Allow the contract owner to mint membership NFTs to customers directly from the frontend.
 
 **Tasks:**
-- ✅Create a simple admin section/page for the owner  
-- ✅Add a form to input a recipient address  
-- ✅Connect the form to the `mint(address)` function in the contract  
-- ✅Show basic feedback in the UI (loading, success, error)  
+- Create a simple admin section/page for the owner  
+- Add a form to input a recipient address  
+- Connect the form to the `mint(address)` function in the contract  
+- Show basic feedback in the UI (loading, success, error)  
 
 **Outcome:**  
-✅The owner can mint new membership NFTs to any wallet address through the frontend, using the deployed contract on Polygon Amoy.
+The owner can mint new membership NFTs to any wallet address through the frontend, using the deployed contract on Polygon Amoy.
 
 ---
 

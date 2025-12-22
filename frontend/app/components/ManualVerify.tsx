@@ -2,16 +2,26 @@
 
 import { useState } from "react";
 import { readIsMember } from "../lib/contract/getFlowPassContract";
+import { isAddress } from "viem";
+import { useChainId } from "wagmi";
 
 export default function ManualVerify () {
     const [addr, setAddr ] = useState("");
     const [status, setStatus] = useState("Enter a wallet address and click Check");
     const [loading, setLoading]=useState(false);
 
-    const isValidAddress = (v: string)=> v.startsWith("0x") && v.length === 42;
+    const isValidAddress = (v: string)=> isAddress(v);
+
+    const chainId = useChainId();
+    const isAmoy = chainId === 80002;
 
     const handleManualCheck = async () => {
         const clean = addr.trim();
+
+        if(!isAmoy) {
+            setStatus("Wrong network: switch to Polygon Amoy");
+            return;
+        }
 
         if (!isValidAddress(clean)) {
             setStatus("Please enter a valid wallet address (0x...)");
@@ -29,7 +39,8 @@ export default function ManualVerify () {
             console.error(err);
             setStatus("Error: verification failed");
         } finally {
-            setLoading (false)
+            setLoading (false);
+            setAddr("");
         }
     };
 
@@ -42,7 +53,13 @@ export default function ManualVerify () {
                 For reception staff: paste customer wallet address and check.
             </p>
 
-            <div className="mt-6 rounden-2xl boder p-6">
+            {!isAmoy && (
+                    <div className="mt-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm">
+                        Switch to <strong>Polygon Amoy</strong> to use manual verification.
+                    </div>
+                )}
+
+            <div className="mt-6 rounded-2xl border p-6">
                 <label className="text-sm opacity-80">Wallet address</label>
                 <input 
                     className="mt-2 w-full rounded-xl border px-4 py-3"
@@ -52,9 +69,9 @@ export default function ManualVerify () {
                 />
 
             <button 
-                className="mt-4 w-full rounden-xl border px-4 py-3 disabled:opacity-50"
+                className="mt-4 w-full rounded-xl border px-4 py-3 disabled:opacity-50"
                 onClick={handleManualCheck}
-                disabled={loading}
+                disabled={loading || !isAmoy}
             >
                 {loading ? "Checking..." : "Check Membership"}
             </button>

@@ -84,7 +84,7 @@ const { address} =useAccount();
           {/* MEMBERSHIP BENEFITS*/}
           <section className="flex flex-col gap-6 border-t border-zinc-700/60 pt-16 w-full">
           <h1 className="text-5xl leading-tight font-semibold">
-            Enter you wallet address to verify manually
+           OR
           </h1>
           <ManualVerify />
 
