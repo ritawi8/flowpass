@@ -4,6 +4,7 @@ import ConnectWalletButton from "./components/ConnectWalletButton";
 import MemberStatus from "./components/MemberStatus";
 import OwnerPanel from "./components/OwnerPanel";
 import { useAccount } from "wagmi";
+import ManualVerify from "./components/ManualVerify";
 
 export default function Home() {
 
@@ -85,7 +86,7 @@ const { address} =useAccount();
           <h1 className="text-5xl leading-tight font-semibold">
             Enter you wallet address to verify manually
           </h1>
-
+          <ManualVerify />
 
 
           </section>
