@@ -51,11 +51,11 @@ Allow the contract owner to mint membership NFTs to customers directly from the 
 **Tasks:**
 - ✅Create a simple admin section/page for the owner  
 - ✅Add a form to input a recipient address  
-- Connect the form to the `mint(address)` function in the contract  
+- ✅Connect the form to the `mint(address)` function in the contract  
 - ✅Show basic feedback in the UI (loading, success, error)  
 
 **Outcome:**  
-The owner can mint new membership NFTs to any wallet address through the frontend, using the deployed contract on Polygon Amoy.
+✅The owner can mint new membership NFTs to any wallet address through the frontend, using the deployed contract on Polygon Amoy.
 
 ---
 

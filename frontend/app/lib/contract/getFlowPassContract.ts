@@ -12,7 +12,7 @@ export async function readFlowPassName() {
   });
 }
 
-/*Kolla om en användare är medlem*/
+/*Kolla om en användare är medlem, kolla medlemskap (true/false)*/
 export async function readIsMember(user: `0x${string}`) {
   const publicClient = getPublicClient(config);
   return publicClient.readContract({
@@ -22,6 +22,7 @@ export async function readIsMember(user: `0x${string}`) {
     args: [user],
   });
 }
+
 
 /* Mint ett NFT till en adress*/
 export async function mintTo(to: `0x${string}`) {
@@ -43,3 +44,4 @@ export async function mintTo(to: `0x${string}`) {
   const receipt = await publicClient.waitForTransactionReceipt({ hash });
   return receipt;
 }
+
