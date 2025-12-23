@@ -18,11 +18,7 @@ export default function MemberStatus() {
     setMounted(true);
   }, []);
 
-  const handleReset = () => {
-    setIsMember(null);
-    setError(null);
-    setLoading(false)
-  }
+  
 
   // Auto-check membership when wallet connects / address changes
   useEffect(() => {

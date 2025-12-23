@@ -7,7 +7,8 @@ import { useChainId } from "wagmi";
 
 export default function ManualVerify () {
     const [addr, setAddr ] = useState("");
-    const [status, setStatus] = useState("Enter a wallet address and click Check");
+    const defaultStatus = "Enter a wallet address and click Check";
+    const [status, setStatus] = useState(defaultStatus);
     const [loading, setLoading]=useState(false);
 
     const isValidAddress = (v: string)=> isAddress(v);
@@ -40,8 +41,15 @@ export default function ManualVerify () {
             setStatus("Error: verification failed");
         } finally {
             setLoading (false);
-            setAddr("");
         }
+    };
+
+    
+
+    const handleClear = () => {
+        setAddr("");
+        setStatus(defaultStatus);
+        setLoading(false);
     };
 
     return (
@@ -68,6 +76,8 @@ export default function ManualVerify () {
                     onChange={(e) => setAddr(e.target.value)}
                 />
 
+            <div className="mt-4 text-sm opacity-80">Status: {status}</div>
+
             <button 
                 className="mt-4 w-full rounded-xl border px-4 py-3 disabled:opacity-50"
                 onClick={handleManualCheck}
@@ -75,8 +85,16 @@ export default function ManualVerify () {
             >
                 {loading ? "Checking..." : "Check Membership"}
             </button>
+            
+            {status !==defaultStatus && (
+                <button 
+                    onClick={handleClear}
+                    className="mt-3 w-full rounded-xl border px-4 py-3 text-sm">
+                        Clear/Next customer
+                    </button>
+            )}
 
-            <div className="mt-4 text-sm opacity-80">Status: {status}</div>
+            
             </div>
         </section>
     )
