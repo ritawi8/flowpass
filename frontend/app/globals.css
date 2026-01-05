@@ -11,7 +11,7 @@
 
 body {
   min-height: 100vh;
-  background: radial-gradient(circle,rgba(42, 136, 155, 1) 14%, rgba(43, 161, 127, 1) 100%, rgba(237, 221, 83, 1) 100%);
+  background:#0dbf9ff6;
   color: var(--text-color);
   font-family: var(--font-body);
   margin: 0;
