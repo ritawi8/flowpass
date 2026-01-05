@@ -23,36 +23,37 @@ const { address} =useAccount();
         }}
       >
         <div className="flex w-full max-w-5xl flex-col items-center gap-6 px-8 text-center relative z-10 pt-12 pb-20 mx-auto">
-          <h1 className="text-7xl leading-tight font-semibold text-zinc-200 w-full break-words">
+          <h1 className="text-7xl leading-tight font-bold text-zinc-200 w-full break-words">
             Welcome to Wellness Studio
           </h1>
         
           
-          <p className="text-lg text-zinc-200">
+          <p className="text-2xl font-semibold text-zinc-200">
             FlowPass is your NFT membership pass for modern wellness spaces 
             <br />- simple, secure and made for real people, not crypto nerd.
           </p>
 
-          <h2 className="text-2xl font-semibold text-zinc-200">
+          <h2 className="text-3xl font-semibold text-zinc-200">
               How it works
             </h2>
 
-            <ol className="space-y-3 text-zinc-200 text-center">
+            <ol className="space-y-3 text-zinc-200 text-center ">
               <li>
-                <span className="font-semibold">1. Get your FlowPass.</span>
+                <span className="font-bold">1. Get your FlowPass.</span>
                 {" "}You receive a unique NFT membership pass in your wallet.
               </li>
               <li>
-                <span className="font-semibold">2. Connect your wallet at the studio.</span>
+                <span className="font-bold">2. Connect your wallet at the studio.</span>
                 {" "}The system checks your pass in a second.
               </li>
               <li>
-                <span className="font-semibold">3. Enjoy member-only access.</span>
+                <span className="font-bold">3. Enjoy member-only access.</span>
                 {" "}Classes, events or perks unlocked automatically.
               </li>
             </ol>
+            <br />
 
-            <h2 className="text-2xl font-semibold text-zinc-200">
+            <h2 className="text-3xl font-semibold text-zinc-200">
               Membership Benefits
             </h2>
             <ul className="space-y-3 text-zinc-200 text-center">
