@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { mintTo } from "../lib/contract/getFlowPassContract";
 import { useChainId } from "wagmi";
 
@@ -15,7 +15,11 @@ export default function OwnerPanel({ connectedAddress }: Props) {
 const [ recipient, setRecipient ] = useState("");
 const [ status, setStatus ] = useState("Enter a wallet address and click Mint");
 const chainId = useChainId();
-const isAmoy = chainId === 80002;
+const [isAmoy, setIsAmoy] = useState(false);
+
+useEffect(() => {
+  setIsAmoy(chainId === 80002);
+}, [chainId]);
 
     // If no wallet is connected - shows nothing
     if(!connectedAddress) return null;
