@@ -14,12 +14,20 @@ export default function OwnerPanel({ connectedAddress }: Props) {
 
 const [ recipient, setRecipient ] = useState("");
 const [ status, setStatus ] = useState("Enter a wallet address and click Mint");
+const [mounted, setMounted] = useState(false);
 const chainId = useChainId();
 const [isAmoy, setIsAmoy] = useState(false);
 
 useEffect(() => {
+  setMounted(true);
+}, []);
+
+useEffect(() => {
   setIsAmoy(chainId === 80002);
 }, [chainId]);
+
+    // Avoid hydration mismatch
+    if (!mounted) return null;
 
     // If no wallet is connected - shows nothing
     if(!connectedAddress) return null;
