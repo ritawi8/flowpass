@@ -75,26 +75,32 @@ export default function ManualVerify () {
                     onChange={(e) => setAddr(e.target.value)}
                 />
 
-                {status && (
-                    <p className="mt-3 text-xs text-slate-500">
-                        {status}
-                    </p>
-                )}
-
                 <button 
                     className="mt-5 w-full rounded-xl bg-[#1f7a73] text-white font-semibold py-3 hover:opacity-90 transition disabled:opacity-50"
-                    onClick={handleManualCheck}
+                    onClick={status && (status === "✅ Membership verified" || status === "❌ No active membership") ? handleClear : handleManualCheck}
                     disabled={loading || !isAmoy}
                 >
-                    {loading ? "Checking..." : "Check Membership"}
+                    {loading ? "Checking..." : (status && (status === "✅ Membership verified" || status === "❌ No active membership") ? "Clear/Next customer" : "Check Membership")}
                 </button>
-                
+
                 {status && (
-                    <button 
-                        onClick={handleClear}
-                        className="mt-3 w-full rounded-xl border border-gray-300 py-3 text-gray-700 hover:bg-gray-50 transition">
-                        Clear/Next customer
-                    </button>
+                    <div className="mt-8 flex justify-center">
+                        {status === "✅ Membership verified" ? (
+                            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-2 text-emerald-700">
+                                <span className="text-sm">✔</span>
+                                <span className="text-sm font-medium">Membership verified</span>
+                            </span>
+                        ) : status === "❌ No active membership" ? (
+                            <span className="inline-flex items-center gap-2 rounded-full bg-yellow-50 border border-yellow-200 px-4 py-2 text-yellow-700">
+                                <span className="text-sm">✗</span>
+                                <span className="text-sm font-medium">No active membership</span>
+                            </span>
+                        ) : (
+                            <p className="text-xs text-slate-500">
+                                {status}
+                            </p>
+                        )}
+                    </div>
                 )}
             </div>
         </>
