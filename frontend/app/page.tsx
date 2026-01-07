@@ -67,29 +67,42 @@ const { address} =useAccount();
       </section>
 
       {/* RESTEN AV INNEHÅLLET */}
-      <div className="flex justify-center px-6 py-40 md:py-64 min-h-[100vh]">
-        <div className="flex w-full max-w-5xl flex-col items-center gap-16 px-8 text-center sm:items-start sm:text-left">
+      <div className="min-h-screen bg-[#1f7a73] flex items-center justify-center">
+        <div className="mx-auto max-w-3xl px-6 w-full flex flex-col items-center justify-center gap-10 py-16">
           
-          <section className="flex flex-col gap-6 pt-16 w-full">
-           
-          <h1 className="text-3xl leading-tight font-semibold text-zinc-200">
-            Connect your wallet to verify membership status
-          </h1>
+          {/* Card 1 - Wallet Verify */}
+          <section className="rounded-3xl bg-white shadow-lg p-10 text-center w-full max-w-2xl mx-auto h-[500px] flex flex-col justify-start">
+            <div className="space-y-4">
+              <h1 className="text-3xl font-semibold text-gray-900">
+                Verify membership
+              </h1>
+              <p className="text-sm text-slate-500">
+                Connect your wallet to check your status.
+              </p>
+              <p className="text-xs text-slate-400">
+                Network: Polygon Amoy 
+              </p>
 
+              <div className="pt-2 flex justify-center">
+                <ConnectWalletButton/>
+              </div>
+            </div>
 
+            <div className="flex-1 flex items-start justify-center mt-6">
+              <MemberStatus/>
+            </div>
+          </section>
 
-            <ConnectWalletButton/>
-            <MemberStatus/>
-            </section>
+          {/* Divider */}
+          <div className="flex items-center justify-center gap-4 w-full flex-shrink-0">
+            <div className="h-px flex-1 bg-white/20" />
+            <span className="text-white/70 text-sm tracking-widest">OR</span>
+            <div className="h-px flex-1 bg-white/20" />
+          </div>
 
-          {/* MEMBERSHIP BENEFITS*/}
-          <section className="flex flex-col gap-6 border-t border-zinc-700/60 pt-16 w-full text-zinc-200">
-          <h1 className="text-5xl leading-tight font-semibold">
-           OR
-          </h1>
-          <ManualVerify />
-
-
+          {/* Card 2 - Manual Verify */}
+          <section className="rounded-3xl bg-white shadow-lg p-10 w-full max-w-2xl mx-auto flex-shrink-0 h-[500px] flex flex-col">
+            <ManualVerify />
           </section>
           
         </div>

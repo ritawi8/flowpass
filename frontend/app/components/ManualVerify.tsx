@@ -7,8 +7,7 @@ import { useChainId } from "wagmi";
 
 export default function ManualVerify () {
     const [addr, setAddr ] = useState("");
-    const defaultStatus = "Enter a wallet address and click Check";
-    const [status, setStatus] = useState(defaultStatus);
+    const [status, setStatus] = useState("");
     const [loading, setLoading]=useState(false);
 
     const isValidAddress = (v: string)=> isAddress(v);
@@ -25,7 +24,7 @@ export default function ManualVerify () {
         }
 
         if (!isValidAddress(clean)) {
-            setStatus("Please enter a valid wallet address (0x...)");
+            setStatus("Enter valid address (0x...)");
             return;
         }
 
@@ -48,54 +47,56 @@ export default function ManualVerify () {
 
     const handleClear = () => {
         setAddr("");
-        setStatus(defaultStatus);
+        setStatus("");
         setLoading(false);
     };
 
     return (
-        <section className="mt-10">
-            <h2 className="text-3xl font-semibold">
+        <>
+            <h2 className="text-3xl font-semibold text-gray-900 text-center">
                 Enter your address to verify manually
             </h2>
-            <p className="mt-2 text-sm opacity-80">
+            <p className="mt-2 text-sm text-slate-500 text-center">
                 For reception staff: paste customer wallet address and check.
             </p>
 
             {!isAmoy && (
-                    <div className="mt-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm">
-                        Switch to <strong>Polygon Amoy</strong> to use manual verification.
-                    </div>
-                )}
+                <div className="mt-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm text-red-700">
+                    Switch to <strong>Polygon Amoy</strong> to use manual verification.
+                </div>
+            )}
 
-            <div className="mt-6 rounded-2xl border p-6">
-                <label className="text-sm opacity-80">Wallet address</label>
+            <div className="mt-6">
+                <label className="block text-sm font-medium text-gray-700">Wallet address</label>
                 <input 
-                    className="mt-2 w-full rounded-xl border px-4 py-3"
+                    className="mt-2 w-full rounded-xl border-2 border-black bg-white px-4 py-3 text-gray-900 placeholder:text-gray-400 font-mono text-sm focus:outline-none focus:ring-2 focus:ring-black/20"
                     placeholder="0x..."
                     value={addr}
                     onChange={(e) => setAddr(e.target.value)}
                 />
 
-            <div className="mt-4 text-sm opacity-80">Status: {status}</div>
+                {status && (
+                    <p className="mt-3 text-xs text-slate-500">
+                        {status}
+                    </p>
+                )}
 
-            <button 
-                className="mt-4 w-full rounded-xl border px-4 py-3 disabled:opacity-50"
-                onClick={handleManualCheck}
-                disabled={loading || !isAmoy}
-            >
-                {loading ? "Checking..." : "Check Membership"}
-            </button>
-            
-            {status !==defaultStatus && (
                 <button 
-                    onClick={handleClear}
-                    className="mt-3 w-full rounded-xl border px-4 py-3 text-sm">
+                    className="mt-5 w-full rounded-xl bg-[#1f7a73] text-white font-semibold py-3 hover:opacity-90 transition disabled:opacity-50"
+                    onClick={handleManualCheck}
+                    disabled={loading || !isAmoy}
+                >
+                    {loading ? "Checking..." : "Check Membership"}
+                </button>
+                
+                {status && (
+                    <button 
+                        onClick={handleClear}
+                        className="mt-3 w-full rounded-xl border border-gray-300 py-3 text-gray-700 hover:bg-gray-50 transition">
                         Clear/Next customer
                     </button>
-            )}
-
-            
+                )}
             </div>
-        </section>
+        </>
     )
 }

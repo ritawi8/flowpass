@@ -54,55 +54,68 @@ export default function MemberStatus() {
   }, [isConnected, address]);
 
   // Förhindra hydration mismatch - vänta tills komponenten är mounted
-  if (!mounted) return null;
+  if (!mounted) return <div className="min-h-[200px]"></div>;
 
   if (!isConnected) {
-    return (<p className="text-sm text-zinc-200">
-      Connect wallet to verify membership.
-      </p>
-    );
+    return <div className="min-h-[200px]"></div>;
   }
 
   if (loading) {
-    return <p className="text-sm text-zinc-200">Checking membership…</p>;
+    return (
+      <div className="min-h-[200px] flex items-center justify-center">
+        <p className="text-sm text-gray-600">Checking membership…</p>
+      </div>
+    );
   }
 
  // If there is an error, show it + allow disconnect
   if (error) {
     return (
-      <div className="mt-2 w-full">
-        <p className="text-sm text-red-200">Error: {error}</p>
+      <div className="min-h-[200px] flex flex-col justify-center">
+        <div className="flex items-center justify-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-red-50 border border-red-200 px-4 py-2 text-red-700">
+            <span className="text-sm">✗</span>
+            <span className="text-sm font-medium">Error: {error}</span>
+          </span>
+        </div>
 
-        <button 
-          onClick={() =>disconnect()}
-          className="mt-3 w-full rounded-xl border px-4 py-3 text-sm text-zinc-200">
-            Disconnect Wallet
+        <div className="mt-6 flex justify-center">
+          <button 
+            onClick={() => disconnect()}
+            className="rounded-xl bg-red-500 hover:bg-red-600 text-white font-medium px-6 py-3 shadow-md hover:shadow-lg transition-all duration-200">
+            Disconnect
           </button>
+        </div>
       </div>
     );
   }
 
   // No result yet (connected but not checked / just reset states)
-  if (isMember === null) return null;
+  if (isMember === null) return <div className="min-h-[200px]"></div>;
 
   return (
-    <div className="mt-2 w-full">
-      {isMember ? (
-        <p className="text-sm text-emerald-200">✅ Membership verified</p>
-      ) : (
-        <p className="text-sm text-yellow-200">❌ No membership NFT found</p>
-      )}
-    
-    <button
-        onClick={() => disconnect()}
-        className="mt-3 w-full rounded-xl border px-4 py-3 text-sm text-zinc-200"
-      >
-        Disconnect wallet
-      </button>
+    <div className="min-h-[200px] flex flex-col justify-center">
+      <div className="flex items-center justify-center gap-2 mb-10">
+        {isMember ? (
+          <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-2 text-emerald-700">
+            <span className="text-sm">✔</span>
+            <span className="text-sm font-medium">Membership verified</span>
+          </span>
+        ) : (
+          <span className="inline-flex items-center gap-2 rounded-full bg-yellow-50 border border-yellow-200 px-4 py-2 text-yellow-700">
+            <span className="text-sm">✗</span>
+            <span className="text-sm font-medium">No membership NFT found</span>
+          </span>
+        )}
+      </div>
 
-      <p className="mt-2 text-xs text-zinc-200/80">
-        Please disconnect your wallet after verification.
-      </p>
+      <div className="mt-6 flex justify-center w-full">
+        <button
+          onClick={() => disconnect()}
+          className="w-full max-w-[280px] rounded-xl border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50">
+          Disconnect
+        </button>
+      </div>
     </div>
   );
 }
