@@ -22,7 +22,7 @@ const { address} =useAccount();
           backgroundRepeat: "no-repeat"
         }}
       >
-        <div className="flex w-full max-w-5xl flex-col items-center gap-6 px-8 text-center relative z-10 pt-12 pb-20 mx-auto">
+        <div className="flex w-full max-w-5xl flex-col items-center gap-6 px-8 text-center relative z-10 pt-12 pb-20 mx-auto scale-125">
           <h1 className="text-7xl leading-tight font-bold text-zinc-200 w-full break-words">
             Welcome to Wellness Studio
           </h1>
