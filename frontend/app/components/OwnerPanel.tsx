@@ -67,7 +67,7 @@ useEffect(() => {
 
     return (
       <section id="owner" className="py-20">
-        <div className="mx-auto max-w-5xl px-4">
+        <div className="mx-auto max-w-5xl px-4 scale-200">
           <h2 className="text-4xl font-semibold text-zinc-200">For Studio Owners</h2>
           <p className="mt-2 text-sm opacity-80">
             Mint a membership pass to a customer wallet.

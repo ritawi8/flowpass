@@ -72,14 +72,14 @@ const { address} =useAccount();
           
           {/* Card 1 - Wallet Verify */}
           <section className="rounded-3xl bg-white shadow-lg p-10 text-center w-full max-w-2xl mx-auto h-[500px] flex flex-col justify-start">
-            <div className="space-y-4">
-              <h1 className="text-3xl font-semibold text-gray-900">
+            <div className="space-y-5">
+              <h1 className="text-4xl font-semibold text-gray-900">
                 Verify membership
               </h1>
-              <p className="text-sm text-slate-500">
+              <p className="text-base text-slate-500">
                 Connect your wallet to check your status.
               </p>
-              <p className="text-xs text-slate-400">
+              <p className="text-sm text-slate-400">
                 Network: Polygon Amoy 
               </p>
 
@@ -109,23 +109,25 @@ const { address} =useAccount();
       </div>
 
       {/* FOR STUDIO OWNERS*/}
-      <section 
-        className="min-h-[100vh] flex items-center justify-center px-6 relative overflow-hidden text-zinc-200"
-      >
-        <div 
-          className="absolute inset-0"
-          style={{
-            backgroundImage: "url('/background.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-            filter: "hue-rotate(-15deg) saturate(1.3)"
-          }}
-        ></div>
-      <div className="relative z-10">
-        <OwnerPanel connectedAddress={address}/>
-      </div>
-      </section>
+      {address && address.toLowerCase() === "0x7cd4eb5f87478686936182e858003644b4c7b0ab".toLowerCase() && (
+        <section 
+          className="min-h-[100vh] flex items-center justify-center px-6 relative overflow-hidden text-zinc-200"
+        >
+          <div 
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "url('/background.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              filter: "hue-rotate(-15deg) saturate(1.3)"
+            }}
+          ></div>
+        <div className="relative z-10">
+          <OwnerPanel connectedAddress={address}/>
+        </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -53,10 +53,10 @@ export default function ManualVerify () {
 
     return (
         <>
-            <h2 className="text-3xl font-semibold text-gray-900 text-center">
+            <h2 className="text-4xl font-semibold text-gray-900 text-center">
                 Enter your address to verify manually
             </h2>
-            <p className="mt-2 text-sm text-slate-500 text-center">
+            <p className="mt-2 text-base text-slate-500 text-center">
                 For reception staff: paste customer wallet address and check.
             </p>
 
