@@ -29,8 +29,8 @@ const { address} =useAccount();
         
           
           <p className="text-2xl font-semibold text-zinc-200">
-            FlowPass is your NFT membership pass for modern wellness spaces 
-            <br />- simple, secure and made for real people, not crypto nerd.
+          <span className="animate-pulse text-white-500 font-bold text-3xl">FlowPass</span> is your NFT membership pass for modern wellness spaces 
+            <br />Simple, secure, and designed for everyday use.
           </p>
 
           <h2 className="text-3xl font-semibold text-zinc-200">
