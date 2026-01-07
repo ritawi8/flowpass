@@ -84,7 +84,7 @@ export default function ManualVerify () {
                 </button>
 
                 {status && (
-                    <div className="mt-8 flex justify-center">
+                    <div className="mt-6 flex justify-center">
                         {status === "✅ Membership verified" ? (
                             <span className="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-200 px-4 py-2 text-emerald-700">
                                 <span className="text-sm">✔</span>
