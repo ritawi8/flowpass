@@ -68,11 +68,11 @@ const { address} =useAccount();
 
       {/* RESTEN AV INNEHÅLLET */}
       <div className="flex justify-center px-6 py-40 md:py-64 min-h-[100vh]">
-        <div className="flex w-full max-w-3xl flex-col items-center gap-16 px-8 text-center sm:items-start sm:text-left">
+        <div className="flex w-full max-w-5xl flex-col items-center gap-16 px-8 text-center sm:items-start sm:text-left">
           
-          <section className="flex flex-col gap-6 border-t border-zinc-700/60 pt-16 w-full">
+          <section className="flex flex-col gap-6 pt-16 w-full">
            
-          <h1 className="text-5xl leading-tight font-semibold">
+          <h1 className="text-3xl leading-tight font-semibold text-zinc-200">
             Connect your wallet to verify membership status
           </h1>
 
@@ -83,7 +83,7 @@ const { address} =useAccount();
             </section>
 
           {/* MEMBERSHIP BENEFITS*/}
-          <section className="flex flex-col gap-6 border-t border-zinc-700/60 pt-16 w-full">
+          <section className="flex flex-col gap-6 border-t border-zinc-700/60 pt-16 w-full text-zinc-200">
           <h1 className="text-5xl leading-tight font-semibold">
            OR
           </h1>
@@ -97,15 +97,21 @@ const { address} =useAccount();
 
       {/* FOR STUDIO OWNERS*/}
       <section 
-        className="min-h-[100vh] flex items-center justify-center px-6 relative"
-        style={{
-          backgroundImage: "url('/background.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat"
-        }}
+        className="min-h-[100vh] flex items-center justify-center px-6 relative overflow-hidden text-zinc-200"
       >
-      <OwnerPanel connectedAddress={address}/>
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "url('/background.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "hue-rotate(-15deg) saturate(1.3)"
+          }}
+        ></div>
+      <div className="relative z-10">
+        <OwnerPanel connectedAddress={address}/>
+      </div>
       </section>
     </main>
   );
