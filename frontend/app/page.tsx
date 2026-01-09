@@ -61,10 +61,10 @@ useEffect(() => setMounted(true), []);
               Membership Benefits
             </h2>
             <ul className="space-y-3 text-zinc-200 text-center">
-              <li>✔ Transparent, verifiable membership – no plastic cards.</li>
-              <li>✔ Easy to manage: one pass, multiple wellness spaces (in the future).</li>
-              <li>✔ Potential perks: discounts, early booking, member-only events.</li>
-              <li>✔ Built on blockchain, but with a calm, human experience.</li>
+              <li>✔ Verifiable, card-free membership.</li>
+              <li>✔ Easy to manage: one pass, multiple wellness spaces.</li>
+              <li>✔ Member perks like discounts and early access.</li>
+              <li>✔ Built on blockchain, designed to feel simple.</li>
             </ul>
           
         </div>
