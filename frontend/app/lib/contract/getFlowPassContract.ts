@@ -23,6 +23,16 @@ export async function readIsMember(user: `0x${string}`) {
   });
 }
 
+/* Läsa kontraktets ägare */
+export async function readContractOwner() {
+  const publicClient = getPublicClient(config);
+  return publicClient.readContract({
+    address: FLOWPASS_ADDRESS,
+    abi: FLOWPASS_ABI,
+    functionName: "owner",
+  }) as Promise<`0x${string}`>;
+}
+
 
 /* Mint ett NFT till en adress*/
 export async function mintTo(to: `0x${string}`) {

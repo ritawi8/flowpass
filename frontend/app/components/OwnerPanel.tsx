@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { mintTo } from "../lib/contract/getFlowPassContract";
+import { mintTo, readContractOwner } from "../lib/contract/getFlowPassContract";
 import { useChainId } from "wagmi";
 
 const OWNER_ADDRESS ="0x7cd4eb5f87478686936182e858003644b4c7b0ab";
@@ -61,7 +61,8 @@ useEffect(() => {
                 setStatus("Success: membership minted : ")
             } catch  (err:unknown) {
                 console.error(err);
-                setStatus("Error: mint failed")
+                const owner = await readContractOwner().catch(() => null);
+                setStatus(`Error: mint failed${owner ? `. Kontraktets ägare: ${owner}` : ''}`)
             }
         }
 
