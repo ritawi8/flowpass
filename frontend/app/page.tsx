@@ -5,10 +5,14 @@ import MemberStatus from "./components/MemberStatus";
 import OwnerPanel from "./components/OwnerPanel";
 import { useAccount } from "wagmi";
 import ManualVerify from "./components/ManualVerify";
+import { useState, useEffect } from "react";
 
 export default function Home() {
 
 const { address} =useAccount();
+const [mounted, setMounted] = useState(false);
+// eslint-disable-next-line
+useEffect(() => setMounted(true), []);
 
   return (
     <main className="flex flex-col">
@@ -109,7 +113,7 @@ const { address} =useAccount();
       </div>
 
       {/* FOR STUDIO OWNERS*/}
-      {address && address.toLowerCase() === "0x7cd4eb5f87478686936182e858003644b4c7b0ab".toLowerCase() && (
+      {mounted && address && address.toLowerCase() === "0x7cd4eb5f87478686936182e858003644b4c7b0ab".toLowerCase() && (
         <section 
           className="min-h-[100vh] flex items-center justify-center px-6 relative overflow-hidden text-zinc-200"
         >
