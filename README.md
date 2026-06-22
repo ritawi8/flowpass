@@ -1,6 +1,20 @@
-# FlowPass – NFT Membership dApp
+# FlowPass 
 
-FlowPass is a simple Web3 prototype that allows a wellness studio to issue and verify membership passes using NFTs.
+NFT-Based Membership Platform for Wellness Studios
+
+FlowPass is a Web3 membership platform that demonstrates NFT-based access management for wellness studios.
+
+## Screenshots
+
+### Landing Page
+![Landing Page](docs/screenshots/flowpass-landing-page.png)
+
+### Membership Verification
+![Membership Verification](docs/screenshots/flowpass-membership-verified.png)
+
+### Owner Panel
+![Owner Panel](docs/screenshots/flowpass-owner-panel.png)
+
 
 ## Project Overview
 The project consists of:
@@ -28,4 +42,4 @@ The project consists of:
 4. Connect MetaMask to the Plygon Amoy testnet
 
 ## Notes
-This project is a prototype developed for educational purposes. No real payments or personal data are used.
+This project demonstrates NFT-based membership management using Solidity smart contracts and a Next.js frontend.
