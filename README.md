@@ -27,19 +27,39 @@ The project consists of:
 - Members-only access based on NFT ownership
 
 ## Tech Stack
-- Solidity (ERC-721)
+
+**Smart Contract**
+- Solidity
+- ERC-721
 - Remix IDE
 - Polygon Amoy Testnet
+
+**Frontend**
 - Next.js
-- wagmi
+- TypeScript
 - Tailwind CSS
+- wagmi
+- viem
+- RainbowKit
+
+## Deployed Contract
+- **Contract Address**: `0xEAD97D1344290A5e38c36b71365E446Ef98191B6`
+- **Block Explorer**: [amoy.polygonscan.com](https://amoy.polygonscan.com/address/0xEAD97D1344290A5e38c36b71365E446Ef98191B6)
+- **Verified Source**: [Sourcify](https://repo.sourcify.dev/80002/0xEAD97D1344290A5e38c36b71365E446Ef98191B6)
 
 ## How to Run the Project
-1. Clone the repository
-2. Install dependencies
- npm install
-3. Start the developlment server: npm run dev
-4. Connect MetaMask to the Plygon Amoy testnet
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/ritawi8/flowpass.git
+    ```
+2. Navigate to the frontend and install dependencies:
+    ```bash
+    cd flowpass/frontend
+    npm install
+    ```
+3. Start the development server:
+    ```bash
+    npm run dev
+    ```
+4. Connect MetaMask to the Polygon Amoy testnet
 
-## Notes
-This project demonstrates NFT-based membership management using Solidity smart contracts and a Next.js frontend.
