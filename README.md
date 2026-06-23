@@ -21,10 +21,11 @@ The project consists of:
 - An ERC-721 smart contract deployed on the Polygon Amoy testnet
 - A Next.js frontend for wallet connection, minting, and membership verification
 
-## Main Features
-- Studio owner can mint a membership NFT to a customer wallet
-- Customers can connect their wallet and verify membership
-- Members-only access based on NFT ownership
+## Features
+- Owner-only NFT minting
+- Wallet authentication + On-chain membership verification
+- ERC-721 membership NFTs
+- Manual wallet lookup
 
 ## Tech Stack
 
